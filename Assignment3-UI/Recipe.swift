@@ -8,18 +8,18 @@
 import Foundation
 
 struct Recipe: Identifiable, Codable {
-    // Using _id for the unique identifier from the API response
+
     var id: String {
         return _id
     }
     
-    // Only the required properties
-    let _id: String // The unique identifier (_id from the JSON)
+
+    let _id: String
     let recipeName: String
     let cuisine: String
     let averageRating: Double
     
-    // Codable conformance to handle JSON decoding
+    
     enum CodingKeys: String, CodingKey {
         case _id
         case recipeName

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class RecipeService {
-    private let baseURL = "https://assignment-3-api-framework.onrender.com/api/getall/recipes"
+    private let baseURL = "https://assignment-3-api-framework.onrender.com/api/getall/recipes"     // Base URL for the API endpoint to fetch recipes
     private var cancellables = Set<AnyCancellable>()
     
     func fetchRecipes(completion: @escaping ([Recipe]) -> Void) {

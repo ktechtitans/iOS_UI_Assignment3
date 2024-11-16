@@ -12,7 +12,7 @@ class RecipeViewModel: ObservableObject {
     @Published var recipes: [Recipe] = []
     private var service = RecipeService()
     
-    func fetchRecipes() {
+    func fetchRecipes() {  // Fetches recipes from the service and updates the recipes array
         service.fetchRecipes { [weak self] fetchedRecipes in
             self?.recipes = fetchedRecipes
         }

@@ -23,7 +23,7 @@ class RecipeService {
             .decode(type: [Recipe].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { result in
-                if case .failure(let error) = result {
+                if case .failure(let error) = result {      // Handles any errors that occur during the network request
                     print("Error fetching recipes: \(error)")
                 }
             }, receiveValue: { recipes in

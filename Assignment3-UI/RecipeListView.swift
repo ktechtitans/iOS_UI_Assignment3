@@ -11,7 +11,7 @@ struct RecipeListView: View {
     @StateObject private var viewModel = RecipeViewModel()
 
     var body: some View {
-        NavigationView {
+        NavigationView {   // NavigationView is used to wrap the List
             List(viewModel.recipes) { recipe in
                 VStack(alignment: .leading) {
                     Text(recipe.recipeName)
@@ -26,7 +26,7 @@ struct RecipeListView: View {
                         .foregroundColor(.secondary)
                 }
             }
-            .navigationTitle("Favorite Recipes")
+            .navigationTitle("Favorite Recipes")   // Navigation title sets the title for the navigation bar
             .onAppear {
                 viewModel.fetchRecipes()
             }
